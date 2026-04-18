@@ -3,7 +3,7 @@ name: PR to Develop
 on:
   pull_request:
     branches:
-      - develop   
+      - develop
 
 jobs:
   build-and-test:
@@ -13,13 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # PASO a: BUILD - Ejemplo para Node.js
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
-        run: npm run build   
+        run: npm run build
 
-      # PASO b: TEST
       - name: Run tests
         run: npm test
