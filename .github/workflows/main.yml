@@ -1,0 +1,30 @@
+name: CI on PR to develop
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Ejemplo: si es Node.js
+      # - name: Setup Node
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20
+
+      - name: Build
+        run: |
+          echo "Ejecutamos build acá"
+          # npm ci
+          # npm run build
+
+      - name: Test
+        run: |
+          echo "Realizamos tests acá"
+          # npm test
